@@ -17,8 +17,11 @@ func Show(f func(int, int) [][]uint8) {
 		dx = 256
 		dy = 256
 	)
+	fmt.Println(dx)
+	fmt.Println(dy)
 	data := f(dx, dy)
 	m := image.NewNRGBA(image.Rect(0, 0, dx, dy))
+
 	for y := 0; y < dy; y++ {
 		for x := 0; x < dx; x++ {
 			v := data[y][x]
