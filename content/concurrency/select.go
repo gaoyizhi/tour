@@ -17,14 +17,23 @@ func fibonacci(c, quit chan int) {
 	}
 }
 
+func printfib(c, quit chan int){
+	for i:=0; i< 10; i++{
+		fmt.Println(<-c)
+	}
+	quit<-0
+
+}
+
 func main() {
 	c := make(chan int)
 	quit := make(chan int)
-	go func() {
+	/*go func() {
 		for i := 0; i < 10; i++ {
 			fmt.Println(<-c)
 		}
 		quit <- 0
-	}()
+	}()*/
+	go printfib(c, quit)
 	fibonacci(c, quit)
 }
