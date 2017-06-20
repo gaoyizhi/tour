@@ -17,11 +17,12 @@ func main() {
 	v := Vertex{3, 4}
 
 	a = f  // a MyFloat 实现了 Abser
+	fmt.Println(a.Abs())
 	a = &v // a *Vertex 实现了 Abser
 
 	// 下面一行，v 是一个 Vertex（而不是 *Vertex）
 	// 所以没有实现 Abser。
-	a = v
+
 
 	fmt.Println(a.Abs())
 }
